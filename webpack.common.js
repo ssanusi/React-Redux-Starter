@@ -13,9 +13,7 @@ const config = {
       {
         test: /.(js|jsx)$/,
         exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.(png|jp(e*)g|gif|svg)$/,
@@ -75,15 +73,6 @@ const config = {
       Utils: path.resolve(__dirname, 'src/utils'),
       Assets: path.resolve(__dirname, 'src/assets')
     }
-  },
-  devtool: 'source-map',
-  devServer: {
-    historyApiFallback: true,
-    contentBase: path.resolve(__dirname, './public'),
-    compress: true,
-    port: 9001,
-    watchContentBase: true,
-    progress: true
   },
   plugins: [
     new HtmlWebPackPlugin({

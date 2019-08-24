@@ -7,14 +7,14 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf dist",
-    "build-dev": "webpack -d --mode development",
-    "build-prod": "webpack -p --mode production",
-    "start": "webpack-dev-server --hot --mode development"
+    "build": "yarn run clean && webpack -p --mode production --config webpack.prod.js",
+    "dev": "webpack-dev-server --hot --mode development --config webpack.dev.js --open"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "eslint": "6.1.0",
@@ -35,13 +35,19 @@
     "url-loader": "^2.1.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-hot-loader": "^4.12.11"
+    "react-hot-loader": "^4.12.11",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0"
   }
 }
